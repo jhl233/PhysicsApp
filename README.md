@@ -1,3 +1,3 @@
 # PhysicsApp
 
-A application for the MKA physics department.
+A application for Mr. Rich's physics classes.
