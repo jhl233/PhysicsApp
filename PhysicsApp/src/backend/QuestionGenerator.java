@@ -22,8 +22,10 @@ public class QuestionGenerator {
         
     }
     
+    
+    
     public String getTypeOfQuestion(){
-        return questions.get(questionNumber).substring(0,2);
+        return questions.get(questionNumber).substring(2,4);
     } 
     
     public String getQuestion(){
@@ -37,4 +39,31 @@ public class QuestionGenerator {
     public String getQuestionNumber(){
         return questionNumber;
     }
+    
+    public String setDifficulty(){
+        return questions.get(questionNumber).substring(0,(questions.get(questionNumber)).length());
+    }
+    
+    public String getDifficulty(){
+        String difficulty = setDifficulty();
+        if(difficulty == "1"){
+            return "GG ez";
+        } else if(difficulty == "2"){
+            return "Medium Rare";
+        } else {
+            return "RAWK SOLID";
+        }
+    }
+    
+//    private String placeNumbers(){
+//        String original = getQuestion();
+//        double randomDouble = Math.random()* 5;
+//        int randomNum = Math.floorDiv(randomDouble, 1);
+//        for(int i = 0;i <= original.length();i++){
+//            if(original.substring(i) == "#"){
+//                String replaced = original.replace("#",String.valueOf(randomNum));
+//            }
+//        }
+//        return replaced;
+//    }
 }
