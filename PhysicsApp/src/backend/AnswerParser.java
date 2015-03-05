@@ -1,60 +1,48 @@
 
 package backend;
-import java.util.HashMap;
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
- * @author dharvey2016
+ * @author Alex + Aiden
  */
 public class AnswerParser {
-    
-    private final HashMap<String, String> answers;
-    
-    
-    public AnswerParser(HashMap<String, String> answers) {
-        this.answers=answers;
+
+    public AnswerParser() {
     }
     
-    public void questionType(int questionNumber, String questionType) {
+    public void questionType(String questionType, String realAnswer, String answers) {
         switch (questionType) {
             case "MC":
-                checkMultipleChoice(questionNumber);
+                checkMultipleChoice(realAnswer, answers);
                 break;
             case "SA":
-                checkShortAnswer(questionNumber);
+                checkShortAnswer();
                 break;
+            case "FB":
+                checkMultipleChoice(realAnswer, answers);
             default:
                 System.out.println("Error =<^.^>=");
                 break;
         }
     }
     
-    public String getAnswer(int questionNumber) {
-        return answers.get("A" + questionNumber); 
-    }
-    
-    public boolean checkMultipleChoice(int questionNumber) {
-        String answer = getAnswer(questionNumber);
-        boolean answerIsCorrect = false;
-        if (answer.equals("A")) {
-// GET USERS ANSWER BRO                
-         
+    public boolean checkMultipleChoice(String realAnswer, String answers) {
+        boolean answerIsCorrect;
+        if (answers.equals(realAnswer)) {
+            System.out.println("Correct! Yay! <>< (<––– Fish)");
+            answerIsCorrect = true;
         }
-        return false;
-       
-                
-    
+        else {
+            System.out.println("WRONG! TRY AGAIN STUPID! D:<");
+            answerIsCorrect = false;
+// GET USERS ANSWER BRO
+            
+        }
+        return answerIsCorrect;
     }
     
-    public boolean checkShortAnswer(int questionNumber) {
-        return false;
+    public boolean checkShortAnswer() {
+        return false; //SEND TO GUY BRO
         
     }
 }

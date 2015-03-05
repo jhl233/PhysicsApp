@@ -9,7 +9,7 @@ import frontend.MainFrame;
 
 /**
  *
- * @author jlee
+ * @author Alex + Aiden
  */
 public class PhysicsApp {
 
