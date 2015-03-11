@@ -11,7 +11,7 @@ import java.util.HashMap;
  */
 public class QuestionGenerator {
     
-    private HashMap<String, String> questions;
+    private final HashMap<String, String> questions;
     
     private String questionNumber;
     
@@ -46,13 +46,15 @@ public class QuestionGenerator {
     
     public String getDifficulty(){
         String difficulty = setDifficulty();
-        if(difficulty == "1"){
-            return "GG ez";
-        } else if(difficulty == "2"){
-            return "Medium Rare";
-        } else {
-            return "RAWK SOLID";
+        if(null != difficulty)switch (difficulty) {
+            case "1":
+                return "Easy";
+            case "2":
+                return "Medium";
+            default:
+                return "Hard";
         }
+        return null;
     }
     
 //    private String placeNumbers(){
