@@ -16,7 +16,7 @@ public class AnswerParser {
                 checkMultipleChoice(realAnswer, answers);
                 break;
             case "SA":
-                checkShortAnswer();
+                checkMultipleChoice(realAnswer, answers);
                 break;
             case "FB":
                 checkMultipleChoice(realAnswer, answers);
@@ -27,17 +27,11 @@ public class AnswerParser {
     }
     
     public boolean checkMultipleChoice(String realAnswer, String answers) {
-        boolean answerIsCorrect;
-        if (answers.equals(realAnswer)) {
+        boolean answerIsCorrect = answers.equals(realAnswer);
+        if (answerIsCorrect)
             System.out.println("Correct! Yay! <>< (<––– Fish)");
-            answerIsCorrect = true;
-        }
-        else {
+        else
             System.out.println("WRONG! TRY AGAIN STUPID! D:<");
-            answerIsCorrect = false;
-// GET USERS ANSWER BRO
-            
-        }
         return answerIsCorrect;
     }
     
