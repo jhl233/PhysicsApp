@@ -48,11 +48,14 @@ public class QuestionGenerator {
         String difficulty = setDifficulty();
         if(null != difficulty)switch (difficulty) {
             case "1":
-                return "Easy";
+                return "1";
+// 1 = easy
             case "2":
-                return "Medium";
+                return "2";
+// 2 = medium
             default:
-                return "Hard";
+                return "3";
+// 3 = hard
         }
         return null;
     }
