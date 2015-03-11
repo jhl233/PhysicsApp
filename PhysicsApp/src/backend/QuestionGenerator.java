@@ -11,53 +11,53 @@ import java.util.HashMap;
  */
 public class QuestionGenerator {
     
-    private final HashMap<String, String> questions;
+    private static HashMap<String, String> questions;
     
-    private String questionNumber;
+    private static String questionNumber;
     
     public QuestionGenerator(HashMap<String,String>questions)
     {
-        this.questions=questions;
+        QuestionGenerator.questions=questions;
         
         
     }
     
     
     
-    public String getTypeOfQuestion(){
+    public static String getTypeOfQuestion(){
         return questions.get(questionNumber).substring(2,4);
     } 
     
-    public String getQuestion(){
+    public static String getQuestion(){
         return questions.get(questionNumber).substring(2,(questions.get(questionNumber)).length());
     }
     
-    public void setQuestionNumber(){
+    public static void setQuestionNumber(){
         questionNumber = "Q" + (int) (Math.random() * questions.size());
     }
     
-    public String getQuestionNumber(){
+    public static String getQuestionNumber(){
         return questionNumber;
     }
     
-    public String setDifficulty(){
+    public static String setDifficulty(){
         return questions.get(questionNumber).substring(0,(questions.get(questionNumber)).length());
     }
     
-    public String getDifficulty(){
+    public static int getDifficulty(){
         String difficulty = setDifficulty();
         if(null != difficulty)switch (difficulty) {
             case "1":
-                return "1";
+                return 1;
 // 1 = easy
             case "2":
-                return "2";
+                return 2;
 // 2 = medium
             default:
-                return "3";
+                return 3;
 // 3 = hard
         }
-        return null;
+        return 0;
     }
     
 //    private String placeNumbers(){
