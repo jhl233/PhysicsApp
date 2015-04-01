@@ -15,7 +15,7 @@ public class PointTracker {
 
     public PointTracker() {
         this.total = total + credit;
-        this.credit = QuestionGenerator.getDifficulty() * numberOfTries;
+        this.credit = QuestionGenerator.getDifficulty() / numberOfTries;
         this.numberOfTries = 1;
     }
     
